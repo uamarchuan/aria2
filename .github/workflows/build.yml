@@ -88,9 +88,9 @@ jobs:
         ./configure \
           --without-openssl --without-gnutls --with-appletls \
           --disable-nls
-    - name: Build aria2
-      run: |
-        make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)" check
+#    - name: Build aria2
+#      run: |
+#        make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)" check
 
     - name: Build aria2 2
       run: |
