@@ -95,12 +95,20 @@ jobs:
     - name: Build aria2 2
       run: |
         make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)"
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: aria2c
+        path: ./src/aria2c
         
     - name: 'Tar files'
-      run: tar -cvf my_files.tar .
+      run: tar -cvf my_files.tar ./src/aria2c
       
-    - uses: actions/download-artifact@v3
+    - uses: actions/upload-artifact@v2
       id: download
       with:
         name: my-artifact
         path: my_files.tar
+
+
