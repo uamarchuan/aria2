@@ -91,6 +91,10 @@ jobs:
     - name: Build aria2
       run: |
         make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)" check
+        
+    - name: 'Tar files'
+      run: tar -cvf my_files.tar .
+      
     - uses: actions/download-artifact@v3
       with:
         name: my-artifact
