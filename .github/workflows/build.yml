@@ -94,7 +94,7 @@ jobs:
 
     - name: Build aria2 2
       run: |
-        make -j"$(nproc 2> /dev/null
+        make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)"
         
     - name: 'Tar files'
       run: tar -cvf my_files.tar .
