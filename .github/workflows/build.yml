@@ -9,8 +9,8 @@ jobs:
       matrix:
         os: [macos-11]
         #compiler: [gcc, clang]
-        #compiler: [clang]
-        compiler: [gcc]
+        compiler: [clang]
+        #compiler: [gcc]
         crypto: [openssl, gnutls]
         exclude:
         - os: macos-11
