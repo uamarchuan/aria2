@@ -91,3 +91,6 @@ jobs:
     - name: Build aria2
       run: |
         make -j"$(nproc 2> /dev/null || sysctl -n hw.ncpu)" check
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
