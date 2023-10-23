@@ -8,7 +8,9 @@ jobs:
     strategy:
       matrix:
         os: [macos-11]
-        compiler: [gcc, clang]
+        #compiler: [gcc, clang]
+        #compiler: [clang]
+        compiler: [gcc]
         crypto: [openssl, gnutls]
         exclude:
         - os: macos-11
